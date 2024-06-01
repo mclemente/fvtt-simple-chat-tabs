@@ -1,0 +1,44 @@
+<section class="{{cssClass}} directory flexcol" id="{{cssId}}" data-tab="{{tabName}}">
+	<nav class="simple-chat-tabs tabs flexrow">
+		{{#each chatTabs}}
+		<a class="item" data-tab="{{this.id}}">
+			{{this.name}}
+			<i
+				id="{{this.id}}chat-notification"
+				class="notification-pip fas fa-exclamation-circle"
+				style="display: none"
+			></i>
+		</a>
+		{{/each}}
+	</nav>
+	<ol id="chat-log"></ol>
+	<div class="hidden jump-to-bottom">
+		<a aria-label="{{localize 'CHAT.JumpToBottom'}}" role="button"
+			><i class="fas fa-keyboard-down"></i> {{localize "CHAT.JumpToBottom"}}</a
+		>
+	</div>
+
+	{{#unless isStream}}
+	<div id="chat-controls" class="flexrow">
+		<label class="chat-control-icon"><i class="fas fa-dice-d20"></i></label>
+		<select aria-label="{{localize 'CHAT.RollVisibility'}}" class="roll-type-select" name="rollMode">
+			{{selectOptions rollModes selected=rollMode localize=true}}
+		</select>
+
+		{{#if user.isGM}}
+		<div class="control-buttons">
+			<a aria-label="{{localize 'CHAT.Export'}}" role="button" class="export-log" data-tooltip="CHAT.Export"
+				><i class="fas fa-save"></i
+			></a>
+			<a aria-label="{{localize 'CHAT.Clear'}}" role="button" class="delete chat-flush" data-tooltip="CHAT.Clear"
+				><i class="fas fa-trash"></i
+			></a>
+		</div>
+		{{/if}}
+	</div>
+
+	<form id="chat-form">
+		<textarea id="chat-message" autocomplete="off" title="{{localize 'CHAT.Chat'}}"></textarea>
+	</form>
+	{{/unless}}
+</section>

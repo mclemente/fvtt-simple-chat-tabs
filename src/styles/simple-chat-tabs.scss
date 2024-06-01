@@ -1,0 +1,37 @@
+$color_1: var(--color-text-light-highlight);
+
+#sidebar-tabs {
+	margin: 0 0 2px;
+}
+
+.simple-chat-tabs {
+	&.tabs {
+		flex: 0;
+		border-bottom: 1px solid var(--color-border-highlight);
+		box-shadow: 0 0 10px var(--color-shadow-primary);
+		min-height: var(--font-size-18);
+		overflow-x: hidden;
+		overflow-y: hidden;
+		flex-wrap: nowrap;
+
+		.item {
+			white-space: nowrap;
+			min-width: fit-content;
+			padding: 0 5px;
+			position: relative;
+
+			&.active {
+				color: $color_1;
+				border: 1px solid var(--color-shadow-primary);
+				border-bottom: none;
+				box-shadow: 0 0 6px inset var(--color-border-highlight);
+				border-radius: 5px 5px 0 0;
+			}
+
+			.notification-pip {
+				top: 0;
+				right: 5px;
+			}
+		}
+	}
+}

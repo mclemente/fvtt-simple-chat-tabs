@@ -1,0 +1,63 @@
+{
+	"id": "simple-chat-tabs",
+	"title": "Simple Chat Tabs",
+	"description": "Splits the Chatlog in two tabs.",
+	"compatibility": {
+		"minimum": 12,
+		"verified": 12
+	},
+	"authors": [
+		{
+			"name": "Matheus Clemente",
+			"url": "https://github.com/mclemente",
+			"discord": "mclemente",
+			"github": "mclemente"
+		}
+	],
+	"esmodules": ["module/simple-chat-tabs.js"],
+	"styles": ["styles/simple-chat-tabs.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "languages/es.json"
+		},
+		{
+			"lang": "cn",
+			"name": "中文",
+			"path": "languages/cn.json"
+		},
+		{
+			"lang": "zh-tw",
+			"name": "正體中文",
+			"path": "languages/zh-tw.json"
+		},
+		{
+			"lang": "de",
+			"name": "Deutsch",
+			"path": "languages/de.json"
+		},
+		{
+			"lang": "ko",
+			"name": "Korean",
+			"path": "languages/ko.json"
+		}
+	],
+	"relationships": {
+		"requires": [
+			{
+				"id": "lib-wrapper",
+				"type": "module"
+			}
+		]
+	},
+	"url": "This is auto replaced",
+	"version": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced"
+}

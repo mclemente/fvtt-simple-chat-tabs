@@ -1,0 +1,22 @@
+{
+	"TC": {
+		"SETTINGS": {
+			"icName": {
+				"name": "First Tab's Name",
+				"hint": ""
+			},
+			"oocName": {
+				"name": "Second Tab's Name",
+				"hint": ""
+			},
+			"otherTypeTab": {
+				"name": "Place Other/Roll messages on the Second Tab",
+				"hint": "Messages with the Other-type and most rolls will be placed on the second tab. Some systems or modules might post rolls under another message type, which might render them on the first tab."
+			}
+		},
+		"TABS": {
+			"IC": "Characters",
+			"OOC": "Players"
+		}
+	}
+}
