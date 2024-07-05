@@ -48,14 +48,6 @@
 			"path": "languages/ko.json"
 		}
 	],
-	"relationships": {
-		"requires": [
-			{
-				"id": "lib-wrapper",
-				"type": "module"
-			}
-		]
-	},
 	"url": "This is auto replaced",
 	"version": "This is auto replaced",
 	"manifest": "This is auto replaced",

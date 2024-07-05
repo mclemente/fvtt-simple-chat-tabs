@@ -1,3 +1,5 @@
+import { libWrapper } from "./libWrapper.js";
+
 class TabChatLog extends ChatLog {
 	constructor(options) {
 		super(options);
