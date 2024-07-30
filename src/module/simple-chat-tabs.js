@@ -216,4 +216,35 @@ Hooks.on("i18nInit", () => {
 			ui.chat._onChangeTab();
 		},
 	});
+
+	game.settings.register("simple-chat-tabs", "enforceOoc", {
+		name: game.i18n.localize("TC.SETTINGS.enforceOoc.name"),
+		hint: game.i18n.localize("TC.SETTINGS.enforceOoc.hint"),
+		scope: "world",
+		config: true,
+		default: false,
+		type: Boolean
+	});
+});
+
+Hooks.on("preCreateChatMessage", (chatMessage, content, options, userId) => {
+	const { OOC, IC } = CONST.CHAT_MESSAGE_STYLES;
+	if (
+		game.settings.get("simple-chat-tabs", "enforceOoc")
+		&& chatMessage.style === IC
+		&& ui.chat.tab?.id === "ooc"
+	) {
+		chatMessage._source.style = OOC;
+		chatMessage.style = OOC;
+		content.style = OOC;
+		delete content.speaker;
+		const speaker = {
+			actor: null,
+			alias: undefined,
+			scene: null,
+			token: null,
+		};
+		chatMessage.speaker = speaker;
+		chatMessage._source.speaker = speaker;
+	}
 });

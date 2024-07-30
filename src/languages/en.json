@@ -1,6 +1,10 @@
 {
 	"TC": {
 		"SETTINGS": {
+			"enforceOoc": {
+				"name": "Enforce Messages on Second Tab",
+				"hint": "Enforces that normal messages sent by users with Player Characters while the second tab is active don't require being prefixed by /ooc, ensuring it isn't sent to the first tab by mistake."
+			},
 			"icName": {
 				"name": "First Tab's Name",
 				"hint": ""
