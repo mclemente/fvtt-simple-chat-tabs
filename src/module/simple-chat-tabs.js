@@ -24,12 +24,6 @@ Hooks.on("init", () => {
 		}
 
 		/** @override */
-		#isAtBottom = true;
-
-		/** @override */
-		#jumpToBottomElement;
-
-		/** @override */
 		static get defaultOptions() {
 			return foundry.utils.mergeObject(super.defaultOptions, {
 				template: "modules/simple-chat-tabs/templates/chat-log.html",
@@ -120,21 +114,6 @@ Hooks.on("init", () => {
 			}
 			return true;
 		}
-
-		/* -------------------------------------------- */
-		/*  Event Listeners and Handlers
-		  /* -------------------------------------------- */
-
-		/** @override */
-		_onScrollLog(event) {
-			if (!this.rendered) return;
-			const log = event.target;
-			const pct = log.scrollTop / (log.scrollHeight - log.clientHeight);
-			if (!this.#jumpToBottomElement) this.#jumpToBottomElement = this.element.find(".jump-to-bottom")[0];
-			this.#isAtBottom = isNaN(pct) || pct > 0.99;
-			this.#jumpToBottomElement.classList.toggle("hidden", this.#isAtBottom);
-			if (isNaN(pct) || pct < 0.01) return this._renderBatch(this.element, CONFIG.ChatMessage.batchSize);
-		}
 	}
 
 	class TabMessages extends Messages {
@@ -150,7 +129,7 @@ Hooks.on("init", () => {
 							.map((message) => message.id)
 					);
 					const jumpToBottomElement = document.querySelector(".jump-to-bottom");
-					jumpToBottomElement.classList.toggle("hidden", true);
+					jumpToBottomElement.classList.add("hidden");
 				},
 				options: {
 					top: window.innerHeight - 150,
